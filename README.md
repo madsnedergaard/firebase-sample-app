@@ -1,68 +1,69 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# The very simple Firebase example app
 
-## Available Scripts
+This is the simplest example I could make of using Firebase **user authentication** and **databases**.
 
-In the project directory, you can run:
+It's utilising a package called `react-firebase-hooks` that makes it easier to use Firebase functionality in React.
 
-### `yarn start`
+## Preview
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<div align="center">
+    <img src="demo.gif" alt="Demo of the app">
+</div>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Guide
 
-### `yarn test`
+I'd suggest the following (at least if you haven't worked with Firebase before):
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Get this example running with my sample Firebase project
+2. Set up your own Firebase project and modify this example
+3. Once that works, copy over code and files to your own project
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Running this example
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Clone this repository to your computer
+- enter the folder (`cd firebase-sample-app`)
+- Run `npm install` in your terminal
+- Run `npm start` in your terminal
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Note:** Since this example is using the same database, if other people adds books they will also appear on your screen - so don't be scared if new items appears :)
 
-### `yarn eject`
+### 2. Set up your Firebase project & use it
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Go to [console.firebase.google.com](https://console.firebase.google.com/u/0/) and create a project (give it a name and disable google analytics for now)
+- Enable authentication
+  - Go to [Authentication](https://console.firebase.google.com/u/0/project/test-44c11/authentication/users) in the left menu
+  - select the "Sign-in method" tab
+  - click on "Google"
+  - toggle the "Enable" switch and select a "support email"
+  - save
+- Enable Firestore
+  - Go to [Firestore](https://console.firebase.google.com/u/0/project/test-44c11/firestore) in the left menu
+  - "Create database"
+  - "Start in test mode"
+  - select some europe-west location
+  - enable
+- Add your initial datastructure (to have something to test with) - see example of the structure for this example below
+- Add a "web app"
+  - Go to [Project Overview](https://console.firebase.google.com/u/0/project/test-44c11/overview)
+  - Click the round button with `</>` under your project name
+  - Don't select "Also set up **Firebase Hosting** for this app" for now and continue
+  - Skip the "Add Firebase SDK" section
+- Update configuration in the code
+  - Still in Firebase dashboard, go into the app settings and under "**Firebase SDK snippet**", select "Config"
+  - Copy these details and replace the details in `firebase.js`
+  - Replace the value of `const COLLECTION = "books"` in `LoggedInApp.js` with the collection name you chose
+- All done, it should now work 🎉
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### The Firestore data structure for this example
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Firestore data example](firestore-example.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 3. Copy over things
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Look through the code and see which parts you want and need - most likely something from these:
+  - `App.js`
+  - `firebase.js`
+  - `LoggedInApp.js`
+  - `NotLoggedInApp.js`
