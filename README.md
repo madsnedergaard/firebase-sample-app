@@ -67,3 +67,4 @@ I'd suggest the following (at least if you haven't worked with Firebase before):
   - `firebase.js`
   - `LoggedInApp.js`
   - `NotLoggedInApp.js`
+- If you're using packages that I used here (`react-firebase-hooks` and `uuid`), remember to run `npm install PACKAGE_NAME` before running your app - you can find the names in `package.json` under "dependencies"
