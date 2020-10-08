@@ -48,8 +48,9 @@ I'd suggest the following (at least if you haven't worked with Firebase before):
 - Add a "web app"
   - Go to [Project Overview](https://console.firebase.google.com/u/0/project/test-44c11/overview)
   - Click the round button with `</>` under your project name
-  - Don't select "Also set up **Firebase Hosting** for this app" for now and continue
+  - Select "Also set up **Firebase Hosting** for this app"
   - Skip the "Add Firebase SDK" section
+  - Follow the steps for initialing the CLI in your terminal
 - Update configuration in the code
   - Still in Firebase dashboard, go into the app settings and under "**Firebase SDK snippet**", select "Config"
   - Copy these details and replace the details in `firebase.js`
