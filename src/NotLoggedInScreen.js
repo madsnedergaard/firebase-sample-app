@@ -1,7 +1,7 @@
 import React from "react";
 import { firebaseAppAuth, provider } from "./firebase";
 
-export const NotLoggedInApp = () => {
+export const NotLoggedInScreen = () => {
   const handleSignIn = () => firebaseAppAuth.signInWithPopup(provider);
 
   return (

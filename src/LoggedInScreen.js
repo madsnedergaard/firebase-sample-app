@@ -28,7 +28,7 @@ const addData = (title) => {
     });
 };
 
-export const LoggedInApp = () => {
+export const LoggedInScreen = () => {
   // We're using a useState hook to keep track of what the user has entered in the input field
   const [bookTitle, setBookTitle] = useState("");
   // We're using the same hook here as in App for getting info about our user

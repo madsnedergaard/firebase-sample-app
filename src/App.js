@@ -1,8 +1,8 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { firebaseAppAuth } from "./firebase";
-import { LoggedInApp } from "./LoggedInApp";
-import { NotLoggedInApp } from "./NotLoggedInApp";
+import { LoggedInScreen } from "./LoggedInScreen";
+import { NotLoggedInScreen } from "./NotLoggedInScreen";
 
 const App = (props) => {
   // We're using a package where someone else created a "hook" for using Firebase functionality
@@ -15,7 +15,7 @@ const App = (props) => {
   }
 
   // We will show a component based on whether we have a "user" or not
-  return user ? <LoggedInApp /> : <NotLoggedInApp />;
+  return user ? <LoggedInScreen /> : <NotLoggedInScreen />;
 };
 
 export default App;
