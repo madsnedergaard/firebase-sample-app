@@ -4,6 +4,8 @@ This is the simplest example I could make of using Firebase **user authenticatio
 
 It's utilising a package called `react-firebase-hooks` that makes it easier to use Firebase functionality in React.
 
+**Got any questions or comments about this repo? Please create an issue!**
+
 ## Preview
 
 <div align="center">
